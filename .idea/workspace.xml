@@ -4,29 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73976a87-15f9-4d5c-9c51-9966e04e2947" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProjecttest_with_allure.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/flagActivePage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/globalVariables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/initializationDriver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locators/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locators/locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page/imagePage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/myapp.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_image_is_saved.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/wait_function.py" afterDir="false" />
+    <list default="true" id="73976a87-15f9-4d5c-9c51-9966e04e2947" name="Changes" comment="project for docker">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +94,15 @@
       <option name="presentableId" value="Default" />
       <updated>1766937226144</updated>
     </task>
+    <task id="LOCAL-00001" summary="project for docker">
+      <option name="closed" value="true" />
+      <created>1768844959010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768844959010</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,5 +115,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project for docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="project for docker" />
   </component>
 </project>

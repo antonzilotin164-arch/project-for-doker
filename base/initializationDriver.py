@@ -14,6 +14,11 @@ def initialization(url, download_dir=None, return_tuple=False):
     # Инициализация опций для Chrome
     options = webdriver.ChromeOptions()
 
+    # ДОБАВЛЕННЫЕ СТРОКИ ДЛЯ HEADLESS РЕЖИМА (ВАЖНО ДЛЯ JENKINS):
+    options.add_argument("--headless=new")  # Режим без экрана
+    options.add_argument("--no-sandbox")  # ОБЯЗАТЕЛЬНО для CI/Jenkins
+    options.add_argument("--disable-dev-shm-usage")  # Решает проблему с памятью
+
     # Базовые опции
     options.add_argument("--incognito")
     options.add_argument("--disable-dev-shm-usage")
@@ -23,6 +28,9 @@ def initialization(url, download_dir=None, return_tuple=False):
     options.add_argument("--disable-infobars")
     options.add_argument("--disable-notifications")
     options.add_argument('ignore-certificate-errors')
+    # РЕКОМЕНДУЮ ДОБАВИТЬ ДЛЯ HEADLESS:
+    options.add_argument("--disable-gpu")  # Для стабильности
+    options.add_argument("--window-size=1920,1080")  # Чтобы был конкретный размер
 
     # НАСТРОЙКИ СКАЧИВАНИЯ - ТАК РАБОТАЕТ
     if download_dir is None:
