@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73976a87-15f9-4d5c-9c51-9966e04e2947" name="Changes" comment="project for docker without display">
-      <change afterPath="$PROJECT_DIR$/selenoid/browsers.json" afterDir="false" />
+    <list default="true" id="73976a87-15f9-4d5c-9c51-9966e04e2947" name="Changes" comment="project for selenoid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/initializationDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/initializationDriver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/imagePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/imagePage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_image_is_saved.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_image_is_saved.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768929833116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="project for selenoid">
+      <option name="closed" value="true" />
+      <created>1772559251777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772559251777</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +144,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project for docker" />
     <MESSAGE value="project for docker without display" />
-    <option name="LAST_COMMIT_MESSAGE" value="project for docker without display" />
+    <MESSAGE value="project for selenoid" />
+    <option name="LAST_COMMIT_MESSAGE" value="project for selenoid" />
   </component>
 </project>

@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import logging
-import time
 import requests
 
 logger = logging.getLogger(__name__)
@@ -55,20 +54,18 @@ class ImagePage():
         descriptions_field.click()
 
     def check_input_field_is_active(self):
-        time.sleep(0.5)
         input_field_is_active = wait_element(self.driver, LocatorsImagePage.descriptions_field, timeout=10)
+
+        # Ждем нужный цвет границы
+        WebDriverWait(self.driver, 3).until(
+            lambda d: input_field_is_active.value_of_css_property("border-color") in ["#e253dd", "rgb(226, 83, 221)",
+                                                                                      "rgba(226, 83, 221, 1)"]
+        )
+
         css_style_border_color = input_field_is_active.value_of_css_property("border-color")
-
         logger.info(f"Фактический цвет границы: '{css_style_border_color}'")
-
-        expected_colors = ["#e253dd", "rgb(226, 83, 221)", "rgba(226, 83, 221, 1)"]
-
-        if css_style_border_color in expected_colors:
-            logger.info("Поле ввода активно")
-            return True
-        else:
-            logger.info(f"Ошибка, поле ввода неактивно. Ожидался один из: {expected_colors}")
-            return False
+        logger.info("Поле ввода активно")
+        return True
 
     def input_descriptions_query(self):
         input_descriptions_field = wait_element(self.driver, LocatorsImagePage.descriptions_field, timeout=10)
@@ -88,7 +85,12 @@ class ImagePage():
     def click_button_generate_image(self, locator):
         """Клик по кнопке генерации через JavaScript (чтобы избежать перекрытия)"""
         button_generate_image = wait_element(self.driver, locator, timeout=10)
-        time.sleep(0.5)  # небольшая пауза для стабильности
+
+        # Ждем что кнопка кликабельна
+        WebDriverWait(self.driver, 3).until(
+            EC.element_to_be_clickable(locator)
+        )
+
         self.driver.execute_script("arguments[0].click();", button_generate_image)
         logger.info("Клик по кнопке генерации выполнен через JavaScript")
 
@@ -116,13 +118,16 @@ class ImagePage():
         """Скачиваем изображение напрямую через HTTP, используя ссылку из тега img"""
 
         # Ждем появления изображения
-        WebDriverWait(self.driver, 300).until(
+        WebDriverWait(self.driver, 3000).until(
             EC.presence_of_element_located((By.ID, "resultImage"))
         )
 
         # Получаем URL изображения из src
         img_element = self.driver.find_element(By.ID, "resultImage")
         img_url = img_element.get_attribute('src')
+
+        # Логируем URL для отладки
+        logger.info(f"URL для скачивания: {img_url}")
 
         if not img_url:
             raise Exception("Не удалось получить ссылку на изображение")
@@ -141,7 +146,7 @@ class ImagePage():
         file_path = save_dir / file_name
 
         # Скачиваем файл
-        response = requests.get(img_url, timeout=30)
+        response = requests.get(img_url, timeout=300)
         response.raise_for_status()
 
         # Сохраняем
@@ -156,5 +161,6 @@ class ImagePage():
         if file_size == 0:
             raise Exception(f"Файл скачался пустой (0 байт): {file_path}")
 
-        logger.info(f"✅ Изображение сохранено: {file_path}, размер: {file_size} байт")
+        logger.info(f"Изображение сохранено: {file_path}, размер: {file_size} байт")
         return file_path
+
